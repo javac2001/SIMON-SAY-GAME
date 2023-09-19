@@ -25,7 +25,9 @@ function gameLevel(){
     gameSequence.push(randomCLass);
     console.log(gameSequence);
     btnFlash(randomBox);
-
+    if(levelUp > 1){
+        LevelUpAlert();
+    }
 }
 
 function btnFlash(btn){
@@ -65,6 +67,34 @@ function checkSequence(gameIndex){
             setTimeout(gameLevel, 1000);
         }
     }else{
-        head.innerHTML = "Game over! press any key to start the game";
+        head.innerHTML = `Game Over! Your score is <b>${levelUp}</b> <br> Press any key to start the game` ;
+        gameAlert();
+        resetGame();
     }
+}
+
+// ==================== RESET SCORE
+
+function resetGame(){
+    levelUp = 0;
+    userSequence = [];
+    gameSequence = [];
+    startGame = false;
+}
+
+// ==================== ALERT
+
+function gameAlert(){
+    let bgAlert = document.querySelector(".container");
+    bgAlert.classList.add('alertGame');
+    setTimeout(() => {
+        bgAlert.classList.remove('alertGame');
+    }, 500);
+}
+function LevelUpAlert(){
+    let bgAlert = document.querySelector(".container");
+    bgAlert.classList.add('levelUp');
+    setTimeout(() => {
+        bgAlert.classList.remove('levelUp');
+    }, 500);
 }

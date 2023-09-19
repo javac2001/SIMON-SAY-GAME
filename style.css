@@ -56,9 +56,17 @@
 }
 .box4{
     justify-self: start;
-    background-color: #e55039;
+    background-color: #9980FA;
 }
 .flashBtn{
     background-color:#f1f2f6;
     transition: all 0.15s ease-in-out 0s;
+}
+.alertGame{
+    background-color: #EA2027;
+    transition: all 0.2s ease-in-out 0s;
+}
+.levelUp{
+    background-color: #2ecc71;
+    transition: all 0.2s ease-in-out 0s;
 }
