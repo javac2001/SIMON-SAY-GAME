@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background-color: #f1c40f;
+}
+.title-container{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    cursor: default;
+}
+.heading-container{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    cursor: default;
+}
+.box-container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 1.2rem;
+    margin-top: 2rem;
+}
+.boxes{
+    border: 5px solid black;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out 0s;
+}
+.boxes:hover{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 10px solid black;
+}
+.box1{
+    justify-self: end;
+    background-color: #60a3bc;
+}
+.box2{
+    justify-self: start;
+    background-color: #e58e26;
+}
+.box3{
+    justify-self: end;
+    background-color: #78e08f;
+}
+.box4{
+    justify-self: start;
+    background-color: #e55039;
+}
+.flashBtn{
+    background-color:#f1f2f6;
+    transition: all 0.15s ease-in-out 0s;
+}
