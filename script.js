@@ -1,3 +1,6 @@
+let gameSequence = [];
+let userSequence = [];
+
 // ==================== GAME START | BUTTON FLASH | LEVEL UP
 let head = document.querySelector(".heading-container");
 let startGame = false;
@@ -13,11 +16,14 @@ function pressStartFunc(e) {
 }
 
 function gameLevel(){
+    userSequence = [];
     levelUp++;
     head.innerHTML = `Level ${levelUp}`;
     let randomNum = Math.floor(Math.random()*4);
     let randomCLass = boxes[randomNum];
     let randomBox = document.querySelector(`.${randomCLass}`);
+    gameSequence.push(randomCLass);
+    console.log(gameSequence);
     btnFlash(randomBox);
 
 }
@@ -38,6 +44,10 @@ for (box of allBox){
 
 function btnPressFunc(){
     userBtnFlash(this)
+    let userBox = this.getAttribute('id');
+    userSequence.push(userBox);
+    console.log(userSequence);
+    checkSequence(userSequence.length - 1);
 }
 
 function userBtnFlash(userBtn){
@@ -47,4 +57,14 @@ function userBtnFlash(userBtn){
     }, 80);
 }
 
-// ==================== BOX ACTION
+// ==================== SEQUENCE MATCHING
+
+function checkSequence(gameIndex){
+    if(userSequence[gameIndex] === gameSequence[gameIndex]){
+        if(userSequence.length === gameSequence.length){
+            setTimeout(gameLevel, 1000);
+        }
+    }else{
+        head.innerHTML = "Game over! press any key to start the game";
+    }
+}
