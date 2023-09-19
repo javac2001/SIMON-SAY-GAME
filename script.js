@@ -1,8 +1,8 @@
+// ==================== GAME START | BUTTON FLASH | LEVEL UP
 let head = document.querySelector(".heading-container");
 let startGame = false;
 let levelUp = 0;
 let boxes = ["box1","box2","box3","box4"];
-
 
 document.addEventListener("keypress", pressStartFunc);
 function pressStartFunc(e) {
@@ -28,3 +28,23 @@ function btnFlash(btn){
         btn.classList.remove('flashBtn');
     }, 300);
 }
+
+// ==================== BOX ACTION
+let allBox = document.querySelectorAll(".boxes");
+
+for (box of allBox){
+    box.addEventListener('click',btnPressFunc);
+}
+
+function btnPressFunc(){
+    userBtnFlash(this)
+}
+
+function userBtnFlash(userBtn){
+    userBtn.classList.add('flashBtn');
+    setTimeout(() => {
+        userBtn.classList.remove('flashBtn');
+    }, 80);
+}
+
+// ==================== BOX ACTION
