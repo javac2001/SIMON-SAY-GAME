@@ -40,6 +40,6 @@ An interactive memory game built with **HTML**, **CSS**, and **JavaScript**. Ins
 1. Clone the repo:
 
 ```bash
-git clone https://github.com/yourusername/simon-says-game.git
+git clone https://github.com/javac2001/SIMON-SAY-GAME.git
 
 
